@@ -1,0 +1,32 @@
+def flatten(lst):
+  # sonuç listesi oluştur
+  result = []
+  
+  # lst listesini gez
+  for item in lst:
+    # item bir liste ise recursive olarak flatten fonksiyonunu tekrar çağır
+    if isinstance(item, list):
+      result.extend(flatten(item))
+    else:
+      # item bir liste değilse sonuç listesine ekle
+      result.append(item)
+      
+  # sonuç listesini döndür
+   returN result
+# SORU 2 
+def reverse_list(lst):
+  # sonuç listesi oluştur
+  result = []
+  
+  # lst listesini tersine dolaş
+  for item in lst[::-1]:
+    # item bir liste ise recursive olarak reverse_list fonksiyonunu tekrar çağır
+    if isinstance(item, list):
+      result.append(reverse_list(item))
+    else:
+      # item bir liste değilse sonuç listesine ekle
+      result.append(item)
+      
+  # sonuç listesini döndür
+  return result
+
